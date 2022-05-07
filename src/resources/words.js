@@ -373,6 +373,7 @@ class Words extends Component {
   static province = "استان";
   static cities = "شهرها";
   static city = "شهر";
+  static expertises = "تخصص ها";
   //---
   static security_guards = "نگهبان ها";
   static security_guard = "نگهبان";

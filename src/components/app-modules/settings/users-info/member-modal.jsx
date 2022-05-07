@@ -24,7 +24,7 @@ import DateItem from "../../../form-controls/date-item";
 import SwitchItem from "../../../form-controls/switch-item";
 import FileItem from "../../../form-controls/file-item";
 import TextItem from "../../../form-controls/text-item";
-import membersService from "../../../../services/settings/org/members-service";
+import membersService from "../../../../services/settings/users-info/members-service";
 import fileService from "../../../../services/file-service";
 import Colors from "../../../../resources/colors";
 import utils from "../../../../tools/utils";

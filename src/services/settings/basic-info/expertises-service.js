@@ -1,16 +1,10 @@
 import http from "../../http-service";
 import { apiUrl } from "../../../config.json";
 
-const apiEndpoint = apiUrl + "/settings/org/members";
+const apiEndpoint = apiUrl + "/settings/basic-info/expertises";
 
 async function getAllData() {
   const { data } = await http.get(`${apiEndpoint}`);
-
-  return data;
-}
-
-async function getParams() {
-  const { data } = await http.get(`${apiEndpoint}/params`);
 
   return data;
 }
@@ -33,19 +27,11 @@ export async function deleteData(recordID) {
   return data;
 }
 
-export async function getPicFileName() {
-  const { data } = await http.get(`${apiEndpoint}/getPicFileName`);
-
-  return data;
-}
-
 const service = {
   getAllData,
-  getParams,
   searchData,
   saveData,
   deleteData,
-  getPicFileName,
 };
 
 export default service;

@@ -5,7 +5,7 @@ import { BsKeyFill as KeyIcon } from "react-icons/bs";
 import Words from "../../../../resources/words";
 import Colors from "../../../../resources/colors";
 import utils from "./../../../../tools/utils";
-import service from "./../../../../services/settings/org/members-service";
+import service from "./../../../../services/settings/users-info/members-service";
 import { AiOutlineCheck as CheckIcon } from "react-icons/ai";
 import {
   getSorter,
