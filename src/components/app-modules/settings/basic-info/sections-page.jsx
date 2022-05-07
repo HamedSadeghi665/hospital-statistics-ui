@@ -5,7 +5,7 @@ import { GiModernCity as CityIcon } from "react-icons/gi";
 import Words from "../../../../resources/words";
 import Colors from "../../../../resources/colors";
 import utils from "./../../../../tools/utils";
-import service from "./../../../../services/settings/basic-info/expertises-service";
+import service from "./../../../../services/settings/basic-info/sections-service";
 import {
   getSorter,
   checkAccess,
@@ -18,18 +18,18 @@ import {
 } from "react-icons/ai";
 import SimpleDataTable from "../../../common/simple-data-table";
 import SimpleDataPageHeader from "../../../common/simple-data-page-header";
-import ExpertiseModal from "./expertise-model";
+import SectionModal from "./section-modal";
 import { usePageContext } from "./../../../contexts/page-context";
 
 const { Text } = Typography;
 
 const getSheets = (records) => [
   {
-    title: "Expertises",
+    title: "Sections",
     data: records,
     columns: [
-      { label: Words.id, value: "ExpertiseID" },
-      { label: Words.title, value: "ExpertiseTitle" },
+      { label: Words.id, value: "SectionID" },
+      { label: Words.title, value: "SectionTitle" },
     ],
   },
 ];
@@ -39,17 +39,17 @@ const baseColumns = [
     title: Words.id,
     width: 100,
     align: "center",
-    dataIndex: "ExpertiseID",
-    sorter: getSorter("ExpertiseID"),
-    render: (ExpertiseID) => <Text>{utils.farsiNum(`${ExpertiseID}`)}</Text>,
+    dataIndex: "SectionID",
+    sorter: getSorter("SectionID"),
+    render: (SectionID) => <Text>{utils.farsiNum(`${SectionID}`)}</Text>,
   },
   {
     title: Words.title,
     width: 200,
     align: "center",
-    dataIndex: "ExpertiseTitle",
-    sorter: getSorter("ExpertiseTitle"),
-    render: (ExpertiseTitle) => <Text>{utils.farsiNum(ExpertiseTitle)}</Text>,
+    dataIndex: "SectionTitle",
+    sorter: getSorter("SectionTitle"),
+    render: (SectionTitle) => <Text>{utils.farsiNum(SectionTitle)}</Text>,
   },
   {
     title: Words.status,
@@ -65,9 +65,9 @@ const baseColumns = [
   },
 ];
 
-const recordID = "ExpertiseID";
+const recordID = "SectionID";
 
-const ProvincesPage = ({ pageName }) => {
+const SectionsPage = ({ pageName }) => {
   const [showCitiesModal, setShowCitiesModal] = useState(false);
 
   const {
@@ -120,10 +120,10 @@ const ProvincesPage = ({ pageName }) => {
       <Spin spinning={progress}>
         <Row gutter={[10, 15]}>
           <SimpleDataPageHeader
-            title={Words.expertises}
+            title={Words.sections}
             searchText={searchText}
             sheets={getSheets(records)}
-            fileName="Expertises"
+            fileName="Sections"
             onSearchTextChanged={(e) => setSearchText(e.target.value)}
             onSearch={handleSearch}
             onClear={() => setRecords([])}
@@ -140,7 +140,7 @@ const ProvincesPage = ({ pageName }) => {
       </Spin>
 
       {showModal && (
-        <ExpertiseModal
+        <SectionModal
           onOk={handleSave}
           onCancel={handleCloseModal}
           isOpen={showModal}
@@ -151,4 +151,4 @@ const ProvincesPage = ({ pageName }) => {
   );
 };
 
-export default ProvincesPage;
+export default SectionsPage;

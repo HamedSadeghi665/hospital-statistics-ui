@@ -11,6 +11,8 @@ import {
   saveModalChanges,
 } from "../../../../tools/form-manager";
 import InputItem from "../../../form-controls/input-item";
+import DropdownItem from "./../../../form-controls/dropdown-item";
+import sectionsService from "./../../../../services/settings/basic-info/sections-service";
 import SwitchItem from "../../../form-controls/switch-item";
 import {
   useModalContext,
@@ -18,8 +20,9 @@ import {
 } from "../../../contexts/modal-context";
 
 const schema = {
-    ExpertiseID: Joi.number().required(),
-    ExpertiseTitle: Joi.string()
+    SectionID: Joi.number().required(),
+    //ParentID: Joi.number(),
+    SectionTitle: Joi.string()
     .min(2)
     .max(50)
     .required()
@@ -29,16 +32,25 @@ const schema = {
 };
 
 const initRecord = {
-  ExpertiseID: 0,
-  ExpertiseTitle: "",
-  IsActive: false,
+    SectionID: 0,
+    ParentID: 0,
+    SectionTitle: "",
+    IsActive: false,
 };
 
 const formRef = React.createRef();
 
-const ExpertiseModal = ({ isOpen, selectedObject, onOk, onCancel }) => {
-  const { progress, setProgress, record, setRecord, errors, setErrors } =
-    useModalContext();
+const SectionModal = ({ isOpen, selectedObject, onOk, onCancel }) => {
+    const {
+        progress,
+        setProgress,
+        record,
+        setRecord,
+        errors,
+        setErrors,
+        parentSections,
+        setParentSections,
+    } = useModalContext();
 
   const resetContext = useResetContext();
 
@@ -51,7 +63,8 @@ const ExpertiseModal = ({ isOpen, selectedObject, onOk, onCancel }) => {
   };
 
   const clearRecord = () => {
-    record.ExpertiseTitle = "";
+    record.SectionTitle = "";
+    record.ParentID = 0;
     record.IsActive = false;
 
     setRecord(record);
@@ -59,10 +72,13 @@ const ExpertiseModal = ({ isOpen, selectedObject, onOk, onCancel }) => {
     loadFieldsValue(formRef, record);
   };
 
-  useMount(() => {
+  useMount(async () => {
     resetContext();
     setRecord(initRecord);
     initModal(formRef, selectedObject, setRecord);
+      
+    const data = await sectionsService.getParams();
+    setParentSections(data);
   });
 
   const isEdit = selectedObject !== null;
@@ -89,30 +105,39 @@ const ExpertiseModal = ({ isOpen, selectedObject, onOk, onCancel }) => {
     >
       <Form ref={formRef} name="dataForm">
         <Row gutter={[5, 1]} style={{ marginLeft: 1 }}>
-          <Col xs={24}>
-            <InputItem
-              title={Words.title}
-              fieldName="ExpertiseTitle"
-              required
-              autoFocus
-              maxLength={50}
-              formConfig={formConfig}
-            />
-          </Col>
-          <Col xs={24}>
-            <SwitchItem
-              title={Words.status}
-              fieldName="IsActive"
-              initialValue={false}
-              checkedTitle={Words.active}
-              unCheckedTitle={Words.inactive}
-              formConfig={formConfig}
-            />
-          </Col>
+            <Col xs={24}>
+                <InputItem
+                title={Words.title}
+                fieldName="SectionTitle"
+                required
+                autoFocus
+                maxLength={50}
+                formConfig={formConfig}
+                />
+            </Col>
+            <Col xs={24}>
+                <DropdownItem
+                title={Words.section}
+                dataSource={parentSections}
+                keyColumn="SectionID"
+                valueColumn="SectionTitle"
+                formConfig={formConfig}
+                />
+            </Col>
+            <Col xs={24}>
+                <SwitchItem
+                title={Words.status}
+                fieldName="IsActive"
+                initialValue={false}
+                checkedTitle={Words.active}
+                unCheckedTitle={Words.inactive}
+                formConfig={formConfig}
+                />
+            </Col>
         </Row>
       </Form>
     </ModalWindow>
   );
 };
 
-export default ExpertiseModal;
+export default SectionModal;

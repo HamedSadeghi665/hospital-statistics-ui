@@ -5,6 +5,7 @@ import MainDashboard from "../pages/main-dashboard";
 import ProvincesPage from "../components/app-modules/settings/basic-info/provinces-page";
 import CitiesPage from "../components/app-modules/settings/basic-info/cities-page";
 import ExpertisesPage from "../components/app-modules/settings/basic-info/expertises-page";
+import SectionsPage from "../components/app-modules/settings/basic-info/sections-page";
 
 import PageAccessesPage from "../components/app-modules/settings/accesses/page-accesses-page";
 
@@ -34,6 +35,11 @@ const PageRoutes = ({ path }) => {
         path={`${path}/basic-info/expertises`}
         exact
         render={() => <ExpertisesPage pageName="Expertises" />}
+      />
+      <ProtectedRoute
+        path={`${path}/basic-info/sections`}
+        exact
+        render={() => <SectionsPage pageName="Sections" />}
       />
       <ProtectedRoute
         path={`${path}/setting/page-accesses`}
