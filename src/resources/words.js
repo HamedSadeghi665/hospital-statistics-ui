@@ -358,6 +358,8 @@ class Words extends Component {
   static company = "شرکت";
   static members = "کاربران";
   static member = "کاربر";
+  static doctors = "پزشکان";
+  static doctor = "پزشک";
   static employees = "کارکنان";
   static employee = "کارمند";
   static company_agents = "رابطین شرکت ها";
@@ -374,6 +376,7 @@ class Words extends Component {
   static cities = "شهرها";
   static city = "شهر";
   static expertises = "تخصص ها";
+  static expertise = "تخصص";
   static sections = "بخش ها";
   static section = "بخش";
   //---
@@ -389,18 +392,12 @@ class Words extends Component {
   static work_time_info = "اطلاعات تردد";
   static reports = "گزارش ها";
   //---
-  static vacation_types = "انواع مرخصی";
-  static vacation_type = "نوع مرخصی";
-  static mission_types = "انواع ماموریت";
-  static mission_type = "نوع ماموریت";
   static holidays = "تعطیلات";
   //---
   static page_accesses = "دسترسی صفحات";
   //---
   static automation = "اتوماسیون اداری";
   //---
-  static transmission = "ترابری";
-  static transmission_requests = "درخواست های نقلیه";
   //---
 
   static messages = {

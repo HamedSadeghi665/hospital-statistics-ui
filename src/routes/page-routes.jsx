@@ -10,6 +10,7 @@ import SectionsPage from "../components/app-modules/settings/basic-info/sections
 import PageAccessesPage from "../components/app-modules/settings/accesses/page-accesses-page";
 
 import MembersPage from "../components/app-modules/settings/users-info/members-page";
+import DoctorsPage from "../components/app-modules/settings/users-info/doctors-page";
 //---
 //---
 
@@ -50,6 +51,11 @@ const PageRoutes = ({ path }) => {
         path={`${path}/users/members`}
         exact
         render={() => <MembersPage pageName="Members" />}
+      />
+      <ProtectedRoute
+        path={`${path}/users/doctors`}
+        exact
+        render={() => <DoctorsPage pageName="Doctors" />}
       />
       <Redirect to="/not-found" />
     </Switch>

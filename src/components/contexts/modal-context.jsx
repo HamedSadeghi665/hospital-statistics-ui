@@ -9,39 +9,22 @@ const ModalContextProvider = ({ children }) => {
   const [record, setRecord] = useState({});
   const [errors, setErrors] = useState({});
   const [memberSearchProgress, setMemberSearchProgress] = useState(false);
-  const [departments, setDepartments] = useState([]);
-  const [roles, setRoles] = useState([]);
   const [members, setMembers] = useState([]);
-  const [employees, setEmployees] = useState([]);
-  const [securityGuards, setSecurityGuards] = useState([]);
+  const [expertises, setExpertises] = useState([]);
   const [provinces, setProvinces] = useState([]);
   const [parentSections, setParentSections] = useState([]);
   const [selectedProvinceID, setSelectedProvinceID] = useState(0);
   const [cities, setCities] = useState([]);
-  const [companySearchProgress, setCompanySearchProgress] = useState(false);
-  const [companies, setCompanies] = useState([]);
-  const [dutyLevels, setDutyLevels] = useState([]);
-  const [workShifts, setWorkShifts] = useState([]);
   const [monthes, setMonthes] = useState([]);
   const [years, setYears] = useState([]);
   const [eduLevels, setEduLevels] = useState([]);
   const [eduFields, setEduFields] = useState([]);
-  const [universities, setUniversities] = useState([]);
-  const [employmentTypes, setEmploymentTypes] = useState([]);
-  const [employmentStatuses, setEmploymentStatuses] = useState([]);
-  const [workPlaces, setWorkPlaces] = useState([]);
   const [regTypes, setRegTypes] = useState([]);
-  const [vacationTypes, setVacationTypes] = useState([]);
-  const [missionTypes, setMissionTypes] = useState([]);
-  const [missionTargets, setMissionTargets] = useState([]);
   const [swapMembers, setSwapMembers] = useState([]);
   const [searchTypes, setSearchTypes] = useState([]);
   const [statuses, setStatuses] = useState([]);
-  const [brands, setBrands] = useState([]);
   const [models, setModels] = useState([]);
   const [types, setTypes] = useState([]);
-  const [transferTypes, setTransferTypes] = useState([]);
-  const [vehicles, setVehicles] = useState([]);
   const [showModal, setShowModal] = useState([]);
   const [commandSources, setCommandSources] = useState([]);
   const [fileList, setFileList] = useState({});
@@ -55,16 +38,10 @@ const ModalContextProvider = ({ children }) => {
     setErrors,
     memberSearchProgress,
     setMemberSearchProgress,
-    departments,
-    setDepartments,
-    roles,
-    setRoles,
     members,
     setMembers,
-    employees,
-    setEmployees,
-    securityGuards,
-    setSecurityGuards,
+    expertises,
+    setExpertises,
     provinces,
     setProvinces,
     parentSections,
@@ -73,14 +50,6 @@ const ModalContextProvider = ({ children }) => {
     setSelectedProvinceID,
     cities,
     setCities,
-    companySearchProgress,
-    setCompanySearchProgress,
-    companies,
-    setCompanies,
-    dutyLevels,
-    setDutyLevels,
-    workShifts,
-    setWorkShifts,
     monthes,
     setMonthes,
     years,
@@ -89,38 +58,18 @@ const ModalContextProvider = ({ children }) => {
     setEduLevels,
     eduFields,
     setEduFields,
-    universities,
-    setUniversities,
-    employmentTypes,
-    setEmploymentTypes,
-    employmentStatuses,
-    setEmploymentStatuses,
-    workPlaces,
-    setWorkPlaces,
     regTypes,
     setRegTypes,
-    vacationTypes,
-    setVacationTypes,
-    missionTypes,
-    setMissionTypes,
-    missionTargets,
-    setMissionTargets,
     swapMembers,
     setSwapMembers,
     searchTypes,
     setSearchTypes,
     statuses,
     setStatuses,
-    brands,
-    setBrands,
     models,
     setModels,
     types,
     setTypes,
-    transferTypes,
-    setTransferTypes,
-    vehicles,
-    setVehicles,
     showModal,
     setShowModal,
     commandSources,
