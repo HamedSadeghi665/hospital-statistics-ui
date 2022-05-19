@@ -74,6 +74,13 @@ const mapper = (pageID) => {
             <CityIcon style={{ color: Colors.cyan[7] }} size={iconSize} />
         );
       break;
+    
+      case 7:
+        link = "section-active-beds";
+            icon = (
+              <CityIcon style={{ color: Colors.cyan[7] }} size={iconSize} />
+          );
+        break;
       
     case 28:
         link = "page-accesses";
@@ -119,6 +126,7 @@ const tabs = [
       { pageName: "Provinces" },
       { pageName: "Expertises" },
       { pageName: "Sections" },
+      { pageName: "SectionActiveBeds" },
     ],
   },
   {

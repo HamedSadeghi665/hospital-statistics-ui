@@ -20,6 +20,8 @@ class Words extends Component {
   static empty_data = "اطلاعاتی برای نمایش وجود ندارد";
   static id = "شناسه";
   static title = "عنوان";
+  static activeBed = "تخت فعال";
+  static sectionActiveBeds = "تخت فعال بخش ها";
   static yes = "بله";
   static no = "خیر";
   static ok = "اعمال";
