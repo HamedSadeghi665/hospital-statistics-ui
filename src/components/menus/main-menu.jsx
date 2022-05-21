@@ -17,8 +17,14 @@ import {
   FaMapMarkerAlt as MapIcon,
   FaUsers as MemberIcon,
   FaDatabase as ManageInfo,
+  FaUserMd as DoctorIcon,
+  FaUserCheck as ExpertIcon,
+  FaStar as ExpertiseIcon,
+  FaBed as ActiveBedIcon,
+  FaCube as GeneralSectionIcon,
+  FaCubes as GeneralSectionPartIcon,
+  FaThLarge as SectionIcon
 } from "react-icons/fa";
-
 import { SiKeycdn as KeyIcon } from "react-icons/si";
 import { GoSettings as BasicSettingsIcon } from "react-icons/go";
 import { FiSettings as SettingsIcon } from "react-icons/fi";
@@ -43,7 +49,7 @@ const mapper = (pageID) => {
     case 2:
         link = "doctors";
             icon = (
-              <MemberIcon style={{ color: Colors.blue[6] }} size={iconSize} />
+              <DoctorIcon style={{ color: Colors.blue[6] }} size={iconSize} />
         );
     break;
     
@@ -64,28 +70,42 @@ const mapper = (pageID) => {
     case 5:
       link = "expertises";
           icon = (
-            <CityIcon style={{ color: Colors.cyan[7] }} size={iconSize} />
+            <ExpertiseIcon style={{ color: '#E91E63' }} size={iconSize} />
         );
       break;
     
     case 6:
       link = "sections";
           icon = (
-            <CityIcon style={{ color: Colors.cyan[7] }} size={iconSize} />
+            <SectionIcon style={{ color: '#FCB900' }} size={iconSize} />
         );
       break;
     
       case 7:
         link = "section-active-beds";
             icon = (
-              <CityIcon style={{ color: Colors.cyan[7] }} size={iconSize} />
+              <ActiveBedIcon style={{ color: Colors.volcano[7] }} size={iconSize} />
           );
       break;
     
       case 8:
         link = "section-experts";
             icon = (
-              <MemberIcon style={{ color: Colors.cyan[7] }} size={iconSize} />
+              <ExpertIcon style={{ color: Colors.orange[7] }} size={iconSize} />
+          );
+      break;
+    
+      case 9:
+        link = "general-sections";
+            icon = (
+              <GeneralSectionIcon style={{ color: Colors.green[8] }} size={iconSize} />
+          );
+      break;
+    
+      case 10:
+        link = "general-section-parts";
+            icon = (
+              <GeneralSectionPartIcon style={{ color: Colors.cyan[7] }} size={iconSize} />
           );
         break;
       
@@ -135,6 +155,8 @@ const tabs = [
       { pageName: "Expertises" },
       { pageName: "Sections" },
       { pageName: "SectionActiveBeds" },
+      { pageName: "GeneralSections" },
+      { pageName: "GeneralSectionParts" },
     ],
   },
   {

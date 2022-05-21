@@ -382,6 +382,9 @@ class Words extends Component {
   static sections = "بخش ها";
   static section = "بخش";
   static experts = "کارشناسان";
+  static general_sections = "بخش های عمومی";
+  static general_section = "بخش عمومی";
+  static general_section_parts = "بخش های بخش عمومی";
   //---
   static security_guards = "نگهبان ها";
   static security_guard = "نگهبان";

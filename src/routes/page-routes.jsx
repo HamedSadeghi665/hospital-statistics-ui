@@ -6,7 +6,9 @@ import ProvincesPage from "../components/app-modules/settings/basic-info/provinc
 import CitiesPage from "../components/app-modules/settings/basic-info/cities-page";
 import ExpertisesPage from "../components/app-modules/settings/basic-info/expertises-page";
 import SectionsPage from "../components/app-modules/settings/basic-info/sections-page";
-import SectionActiveBeds from "../components/app-modules/settings/basic-info/section-active-beds-page";
+import SectionActiveBedsPage from "../components/app-modules/settings/basic-info/section-active-beds-page";
+import GeneralSectionsPage from "../components/app-modules/settings/basic-info/general-sections-page";
+import GeneralSectionPartsPage from "../components/app-modules/settings/basic-info/general-section-parts-page";
 
 import PageAccessesPage from "../components/app-modules/settings/accesses/page-accesses-page";
 
@@ -47,7 +49,17 @@ const PageRoutes = ({ path }) => {
       <ProtectedRoute
         path={`${path}/basic-info/section-active-beds`}
         exact
-        render={() => <SectionActiveBeds pageName="SectionActiveBeds" />}
+        render={() => <SectionActiveBedsPage pageName="SectionActiveBeds" />}
+      />
+      <ProtectedRoute
+        path={`${path}/basic-info/general-sections`}
+        exact
+        render={() => <GeneralSectionsPage pageName="GeneralSections" />}
+      />
+      <ProtectedRoute
+        path={`${path}/basic-info/general-section-parts`}
+        exact
+        render={() => <GeneralSectionPartsPage pageName="GeneralSectionParts" />}
       />
       <ProtectedRoute
         path={`${path}/setting/page-accesses`}

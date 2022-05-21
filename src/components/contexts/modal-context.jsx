@@ -14,6 +14,7 @@ const ModalContextProvider = ({ children }) => {
   const [provinces, setProvinces] = useState([]);
   const [sections, setSections] = useState([]);
   const [parentSections, setParentSections] = useState([]);
+  const [generalSections, setGeneralSections] = useState([]);
   const [selectedProvinceID, setSelectedProvinceID] = useState(0);
   const [cities, setCities] = useState([]);
   const [monthes, setMonthes] = useState([]);
@@ -49,6 +50,8 @@ const ModalContextProvider = ({ children }) => {
     setSections,
     parentSections,
     setParentSections,
+    generalSections,
+    setGeneralSections,
     selectedProvinceID,
     setSelectedProvinceID,
     cities,
