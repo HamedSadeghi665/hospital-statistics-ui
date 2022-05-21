@@ -381,6 +381,7 @@ class Words extends Component {
   static expertise = "تخصص";
   static sections = "بخش ها";
   static section = "بخش";
+  static experts = "کارشناسان";
   //---
   static security_guards = "نگهبان ها";
   static security_guard = "نگهبان";

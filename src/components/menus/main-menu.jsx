@@ -43,7 +43,7 @@ const mapper = (pageID) => {
     case 2:
         link = "doctors";
             icon = (
-              <MemberIcon style={{ color: Colors.magenta[6] }} size={iconSize} />
+              <MemberIcon style={{ color: Colors.blue[6] }} size={iconSize} />
         );
     break;
     
@@ -80,9 +80,16 @@ const mapper = (pageID) => {
             icon = (
               <CityIcon style={{ color: Colors.cyan[7] }} size={iconSize} />
           );
+      break;
+    
+      case 8:
+        link = "section-experts";
+            icon = (
+              <MemberIcon style={{ color: Colors.cyan[7] }} size={iconSize} />
+          );
         break;
       
-    case 28:
+      case 28:
         link = "page-accesses";
             icon = (
               <KeyIcon style={{ color: Colors.red[6] }} size={iconSize} />
@@ -110,6 +117,7 @@ const tabs = [
     pages: [
       { pageName: "Members" },
       { pageName: "Doctors" },
+      { pageName: "SectionExperts" },
     ],
   },
   {

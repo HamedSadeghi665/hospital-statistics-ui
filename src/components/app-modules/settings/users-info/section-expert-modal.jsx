@@ -12,7 +12,7 @@ import {
 } from "../../../../tools/form-manager";
 import InputItem from "../../../form-controls/input-item";
 import DropdownItem from "./../../../form-controls/dropdown-item";
-import doctorsService from "./../../../../services/settings/users-info/doctors-service";
+import sectionExpertsService from "./../../../../services/settings/users-info/section-experts-service";
 import SwitchItem from "../../../form-controls/switch-item";
 import {
   useModalContext,
@@ -20,22 +20,22 @@ import {
 } from "../../../contexts/modal-context";
 
 const schema = {
-    DoctorID: Joi.number().required(),
+    ExpertID: Joi.number().required(),
     MemberID: Joi.number().required(),
-    ExpertiseID: Joi.number().required(),
+    SectionID: Joi.number().required(),
     IsActive: Joi.boolean(),
 };
 
 const initRecord = {
-    DoctorID: 0,
+    ExpertID: 0,
     MemberID: 0,
-    ExpertiseID: 0,
+    SectionID: 0,
     IsActive: false,
 };
 
 const formRef = React.createRef();
 
-const DoctorModal = ({ isOpen, selectedObject, onOk, onCancel }) => {
+const SectionExpertModal = ({ isOpen, selectedObject, onOk, onCancel }) => {
     const {
         progress,
         setProgress,
@@ -45,8 +45,8 @@ const DoctorModal = ({ isOpen, selectedObject, onOk, onCancel }) => {
         setErrors,
         members,
         setMembers,
-        expertises,
-        setExpertises,
+        sections,
+        setSections,
     } = useModalContext();
 
   const resetContext = useResetContext();
@@ -59,13 +59,13 @@ const DoctorModal = ({ isOpen, selectedObject, onOk, onCancel }) => {
     setErrors,
     members,
     setMembers,
-    expertises,
-    setExpertises,
+    sections,
+    setSections,
   };
 
   const clearRecord = () => {
     record.MemberID = 0;
-    record.ExpertiseID = 0;
+    record.SectionID = 0;
     record.IsActive = false;
 
     setRecord(record);
@@ -78,10 +78,10 @@ const DoctorModal = ({ isOpen, selectedObject, onOk, onCancel }) => {
     setRecord(initRecord);
     initModal(formRef, selectedObject, setRecord);
         
-    const data = await doctorsService.getParams();
+    const data = await sectionExpertsService.getParams();
       
     setMembers(data.Members);
-    setExpertises(data.Expertises);
+    setSections(data.Sections);
   });
 
   const isEdit = selectedObject !== null;
@@ -110,19 +110,19 @@ const DoctorModal = ({ isOpen, selectedObject, onOk, onCancel }) => {
         <Row gutter={[5, 1]} style={{ marginLeft: 1 }}>
             <Col xs={24}>
                 <DropdownItem
-                title={Words.member}
-                dataSource={members}
-                keyColumn="MemberID"
-                valueColumn="FullName"
+                title={Words.section}
+                dataSource={sections}
+                keyColumn="SectionID"
+                valueColumn="SectionTitle"
                 formConfig={formConfig}
                 />
             </Col>
             <Col xs={24}>
                 <DropdownItem
-                title={Words.expertises}
-                dataSource={expertises}
-                keyColumn="ExpertiseID"
-                valueColumn="ExpertiseTitle"
+                title={Words.member}
+                dataSource={members}
+                keyColumn="MemberID"
+                valueColumn="FullName"
                 formConfig={formConfig}
                 />
             </Col>
@@ -142,4 +142,4 @@ const DoctorModal = ({ isOpen, selectedObject, onOk, onCancel }) => {
   );
 };
 
-export default DoctorModal;
+export default SectionExpertModal;
