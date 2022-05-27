@@ -2,6 +2,7 @@ import React from "react";
 import { Switch, Redirect } from "react-router-dom";
 import ProtectedRoute from "../components/common/protected-route";
 import MainDashboard from "../pages/main-dashboard";
+//--- Basic Info Pages
 import ProvincesPage from "../components/app-modules/settings/basic-info/provinces-page";
 import CitiesPage from "../components/app-modules/settings/basic-info/cities-page";
 import ExpertisesPage from "../components/app-modules/settings/basic-info/expertises-page";
@@ -9,9 +10,11 @@ import SectionsPage from "../components/app-modules/settings/basic-info/sections
 import SectionActiveBedsPage from "../components/app-modules/settings/basic-info/section-active-beds-page";
 import GeneralSectionsPage from "../components/app-modules/settings/basic-info/general-sections-page";
 import GeneralSectionPartsPage from "../components/app-modules/settings/basic-info/general-section-parts-page";
-
+//--- Main Info Pages
+import DailyFormsPage from "../components/app-modules/settings/main-info/daily-forms-page";
+//--- Access Pages
 import PageAccessesPage from "../components/app-modules/settings/accesses/page-accesses-page";
-
+//--- Users Pages
 import MembersPage from "../components/app-modules/settings/users-info/members-page";
 import DoctorsPage from "../components/app-modules/settings/users-info/doctors-page";
 import SectionExpertsPage from "../components/app-modules/settings/users-info/section-experts-page";
@@ -60,6 +63,11 @@ const PageRoutes = ({ path }) => {
         path={`${path}/basic-info/general-section-parts`}
         exact
         render={() => <GeneralSectionPartsPage pageName="GeneralSectionParts" />}
+      />
+      <ProtectedRoute
+        path={`${path}/main-info/daily-forms`}
+        exact
+        render={() => <DailyFormsPage pageName="DailyForms" />}
       />
       <ProtectedRoute
         path={`${path}/setting/page-accesses`}

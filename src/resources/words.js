@@ -389,6 +389,26 @@ class Words extends Component {
   static security_guards = "نگهبان ها";
   static security_guard = "نگهبان";
   //---
+  static daily_forms = "فرم روزانه";
+  static acctive_beds = "تعداد تخت فعال";
+  static extra_beds = "تعداد تخت اضافه";
+  static in_patients = "تعداد بیمار بستری";
+  static new_in_patients = "بیماران بستری شده جدید";
+  static new_in_patients_from_section = "بیماران بستری شده جدید از بخش";
+  static new_in_patients_from_hospital = "بیماران بستری شده جدید از بیمارستان";
+  static discharged_patients = "بیماران مرخص شده";
+  static discharged_patients_to_section = "بیماران مرخص شده به بخش";
+  static discharged_patients_to_hospital = "بیماران مرخص شده به بیمارستان";
+  static died_patients_on_24_hour = "تعداد بیمار فوت شده قبل از 24 ساعت";
+  static died_patients_more_than_24_hour = "تعداد بیمار فوت شده بعد از 24 ساعت";
+  static patients_less_than_six_hour = "تعداد بیماران با اقامت کمتر از 6 ساعت";
+  static patients_between_6_and_24_hour = "تعداد بیمارن با اقمت بین 6 و 24 ساعت";
+  static patients_in_7_morning = "تعداد بیمار بستری 7 صبح";
+  static matching_beds_with_active_and_extra = "تطبیق چرخش تخت با تعداد تخت فعال و اضافه";
+  static reg_date = "تاریخ ثبت";
+  static reg_time = "زمان ثبت";
+  static number_of_new_in_patient = "تعداد بیماران بستری شده جدید";
+  //---
   static timex = "تایمکس";
   static timex_settings = "تنظیمات تایمکس";
   static security = "امنیت";

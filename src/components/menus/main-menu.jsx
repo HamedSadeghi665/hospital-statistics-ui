@@ -107,7 +107,14 @@ const mapper = (pageID) => {
             icon = (
               <GeneralSectionPartIcon style={{ color: Colors.cyan[7] }} size={iconSize} />
           );
-        break;
+      break;
+    
+      case 11:
+        link = "daily-forms";
+            icon = (
+              <GeneralSectionPartIcon style={{ color: Colors.cyan[7] }} size={iconSize} />
+          );
+      break;
       
       case 28:
         link = "page-accesses";
@@ -160,7 +167,7 @@ const tabs = [
     ],
   },
   {
-    name: "manage-info",
+    name: "main-info",
     title: (
       <TabTitle
         title={Words.manage_info}
@@ -168,7 +175,9 @@ const tabs = [
         icon={ManageInfo}
       />
     ),
-    pages: [],
+    pages: [
+      { pageName: "DailyForms" }
+    ],
   },
   {
     name: "reports",

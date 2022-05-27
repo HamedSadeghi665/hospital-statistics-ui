@@ -10,10 +10,8 @@ import {
   initModal,
   saveModalChanges,
 } from "../../../../tools/form-manager";
-import InputItem from "../../../form-controls/input-item";
 import DropdownItem from "./../../../form-controls/dropdown-item";
 import generalSectionPartsService from "./../../../../services/settings/basic-info/general-section-parts-service";
-import SwitchItem from "../../../form-controls/switch-item";
 import {
   useModalContext,
   useResetContext,

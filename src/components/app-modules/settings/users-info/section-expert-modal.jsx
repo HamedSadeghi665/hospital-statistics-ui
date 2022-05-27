@@ -10,7 +10,6 @@ import {
   initModal,
   saveModalChanges,
 } from "../../../../tools/form-manager";
-import InputItem from "../../../form-controls/input-item";
 import DropdownItem from "./../../../form-controls/dropdown-item";
 import sectionExpertsService from "./../../../../services/settings/users-info/section-experts-service";
 import SwitchItem from "../../../form-controls/switch-item";
