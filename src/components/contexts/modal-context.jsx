@@ -13,6 +13,7 @@ const ModalContextProvider = ({ children }) => {
   const [expertises, setExpertises] = useState([]);
   const [provinces, setProvinces] = useState([]);
   const [sections, setSections] = useState([]);
+  const [doctors, setDoctors] = useState([]);
   const [parentSections, setParentSections] = useState([]);
   const [generalSections, setGeneralSections] = useState([]);
   const [selectedProvinceID, setSelectedProvinceID] = useState(0);
@@ -48,6 +49,8 @@ const ModalContextProvider = ({ children }) => {
     setProvinces,
     sections,
     setSections,
+    doctors,
+    setDoctors,
     parentSections,
     setParentSections,
     generalSections,

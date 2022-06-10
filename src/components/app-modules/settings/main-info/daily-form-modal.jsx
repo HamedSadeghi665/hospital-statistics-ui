@@ -14,7 +14,7 @@ import { Divider } from "antd";
 import NumericInputItem from "../../../form-controls/numeric-input-item";
 import DateItem from "../../../form-controls/date-item";
 import DropdownItem from "./../../../form-controls/dropdown-item";
-import dailyFormService from "./../../../../services/settings/main-info/daily-forms-serevice";
+import dailyFormService from "./../../../../services/settings/main-info/daily-forms-service";
 import {
   useModalContext,
   useResetContext,

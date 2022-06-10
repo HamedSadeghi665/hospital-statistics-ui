@@ -8,7 +8,7 @@ import {
 } from "react-icons/ai";
 import Words from "../../../../resources/words";
 import utils from "../../../../tools/utils";
-import service from "../../../../services/settings/main-info/daily-forms-serevice";
+import service from "../../../../services/settings/main-info/daily-forms-service";
 import {
   getSorter,
   checkAccess,
@@ -20,7 +20,6 @@ import SimpleDataPageHeader from "../../../common/simple-data-page-header";
 import DailyFormModal from "./daily-form-modal";
 import DailyFormDetailsModal from "./daily-forms-details-modal";
 import Colors from "../../../../resources/colors";
-import MemberProfileImage from "../../../common/member-profile-image";
 import { usePageContext } from "../../../contexts/page-context";
 
 const { Text } = Typography;
@@ -32,7 +31,10 @@ const getSheets = (records) => [
     columns: [
         { label: Words.id, value: "ID" },
         { label: Words.section, value: "SectionTitle" },
-        { label: Words.date, value: "Date" },
+        {
+          label: Words.date,
+          value: (record) => `${utils.slashDate(record.Date)}`,
+        },
         { label: Words.acctive_beds, value: "ActiveBeds" },
         { label: Words.extra_beds, value: "ExtraBeds" },
         { label: Words.in_patients, value: "InPatients" },
@@ -48,8 +50,14 @@ const getSheets = (records) => [
         { label: Words.patients_between_6_and_24_hour, value: "PatientsBetween6And24Hour" },
         { label: Words.patients_in_7_morning, value: "PatientsIn7Morning" },
         { label: Words.matching_beds_with_active_and_extra, value: "MatchingBedsWithActiveAndExtra" },
-        { label: Words.reg_date, value: "RegDate" },
-        { label: Words.reg_time, value: "RegTime" },
+        {
+          label: Words.reg_date,
+          value: (record) => `${utils.slashDate(record.RegDate)}`,
+        },
+        {
+          label: Words.reg_time,
+          value: (record) => `${utils.colonTime(record.RegTime)}`,
+        },
         {
             label: Words.reg_member,
             value: (record) => `${record.RegFirstName} ${record.RegLastName}`,
@@ -75,6 +83,18 @@ const baseColumns = [
         render: (record) => (
             <Text style={{ color: Colors.blue[6] }}
                 >{`${record.SectionTitle}`}
+            </Text>
+        ),
+    },
+    {
+        title: Words.date,
+        width: 100,
+        align: "center",
+        dataIndex: "Date",
+        sorter: getSorter("Date"),
+        render: (Date) => (
+            <Text style={{ color: Colors.orange[6] }}>
+                {utils.farsiNum(utils.slashDate(Date))}
             </Text>
         ),
     },
