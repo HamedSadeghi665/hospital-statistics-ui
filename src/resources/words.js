@@ -395,6 +395,7 @@ class Words extends Component {
   static acctive_beds = "تعداد تخت فعال";
   static extra_beds = "تعداد تخت اضافه";
   static in_patients = "تعداد بیمار بستری";
+  static out_patients = "تعداد بیمار مرخص شده";
   static new_in_patients = "بیماران بستری شده جدید";
   static new_in_patients_from_section = "بیماران بستری شده جدید از بخش";
   static new_in_patients_from_hospital = "بیماران بستری شده جدید از بیمارستان";
@@ -409,6 +410,7 @@ class Words extends Component {
   static matching_beds_with_active_and_extra = "تطبیق چرخش تخت با تعداد تخت فعال و اضافه";
   static number_of_new_in_patient = "تعداد بیماران بستری شده جدید";
   //---
+  static monthly_forms = "فرم آمار ماهانه"
   static birth_forms = "فرم درصد زایمان";
   static births = "تعداد کل زایمان";
   static natural_births = "تعداد زایمان طبیعی";
