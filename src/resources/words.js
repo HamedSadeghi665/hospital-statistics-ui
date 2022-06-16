@@ -251,6 +251,7 @@ class Words extends Component {
   static no_alternative_employees = "پرسنل بدون جانشین";
   static response = "پاسخ";
   static no_alternative_employee = "بدون جانشین";
+  static age = "سن";
 
   static total = "کل";
   static used = "مصرف شده";
@@ -364,6 +365,7 @@ class Words extends Component {
   static member = "کاربر";
   static doctors = "پزشکان";
   static doctor = "پزشک";
+  static patient_fullname = "نام بیمار";
   static employees = "کارکنان";
   static employee = "کارمند";
   static company_agents = "رابطین شرکت ها";
@@ -445,6 +447,17 @@ class Words extends Component {
   static live_births = "تعداد نوزاد زنده متولد شده";
   static natural_births_percent = "درصد زایمان طبیعی";
   static cesarean_births_percent = "درصد زایمان سزارین";
+  //---
+  static death_forms = "فرم فوت شدگان";
+  static accept_date = "تاریخ پذیرش";
+  static death_date = "تاریخ فوت";
+  static death_cause = "علت مرگ";
+  static file_number = "شماره پرونده";
+  static icd10_category = "دسته بندی بر اساس ICD10";
+  static under_five_age_death = "مرگ کودکان کمتر از 5 سال";
+  static times_periods = "بازه زمانی مرگ";
+  static mother_death = "مرگ مادر";
+  static death_section = "بخش مرگ بیمار";
   //---
   static timex = "تایمکس";
   static timex_settings = "تنظیمات تایمکس";

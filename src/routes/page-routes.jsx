@@ -14,6 +14,7 @@ import GeneralSectionPartsPage from "../components/app-modules/settings/basic-in
 import DailyFormsPage from "../components/app-modules/settings/main-info/daily-forms-page";
 import BirthFormsPage from "../components/app-modules/settings/main-info/birth-forms-page";
 import MonthlyFormsPage from "../components/app-modules/settings/main-info/monthly-forms-page";
+import DeathFormsPage from "../components/app-modules/settings/main-info/death-forms-page";
 //--- Access Pages
 import PageAccessesPage from "../components/app-modules/settings/accesses/page-accesses-page";
 //--- Users Pages
@@ -80,6 +81,11 @@ const PageRoutes = ({ path }) => {
         path={`${path}/main-info/monthly-forms`}
         exact
         render={() => <MonthlyFormsPage pageName="MonthlyForms" />}
+      />
+      <ProtectedRoute
+        path={`${path}/main-info/death-forms`}
+        exact
+        render={() => <DeathFormsPage pageName="DeathForms" />}
       />
       <ProtectedRoute
         path={`${path}/setting/page-accesses`}

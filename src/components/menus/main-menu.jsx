@@ -129,6 +129,13 @@ const mapper = (pageID) => {
               <GeneralSectionPartIcon style={{ color: Colors.cyan[7] }} size={iconSize} />
           );
       break;
+    
+      case 14:
+        link = "death-forms";
+            icon = (
+              <GeneralSectionPartIcon style={{ color: Colors.cyan[7] }} size={iconSize} />
+          );
+      break;
       
       case 28:
         link = "page-accesses";
@@ -192,7 +199,8 @@ const tabs = [
     pages: [
       { pageName: "DailyForms" },
       { pageName: "BirthForms" },
-      { pageName: "MonthlyForms" }
+      { pageName: "MonthlyForms" },
+      { pageName: "DeathForms" }
     ],
   },
   {

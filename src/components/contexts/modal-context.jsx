@@ -19,6 +19,9 @@ const ModalContextProvider = ({ children }) => {
   const [selectedProvinceID, setSelectedProvinceID] = useState(0);
   const [cities, setCities] = useState([]);
   const [monthes, setMonthes] = useState([]);
+  const [ageCategories, setAgeCategories] = useState([]);
+  const [icd10Categories, setIcd10Categories] = useState([]);
+  const [timePeriods, setTimePeriods] = useState([]);
   const [years, setYears] = useState([]);
   const [eduLevels, setEduLevels] = useState([]);
   const [eduFields, setEduFields] = useState([]);
@@ -61,6 +64,12 @@ const ModalContextProvider = ({ children }) => {
     setCities,
     monthes,
     setMonthes,
+    ageCategories,
+    setAgeCategories,
+    icd10Categories,
+    setIcd10Categories,
+    timePeriods,
+    setTimePeriods,
     years,
     setYears,
     eduLevels,
